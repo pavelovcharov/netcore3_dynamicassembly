@@ -221,7 +221,7 @@ namespace Generator {
     public class ServiceContainer : IServiceContainer {
         public ServiceContainer(object owner) { }
         T IServiceContainer.GetService<T>(string key, object arg) {
-            System.Windows.MessageBox.Show("!");
+            System.Windows.MessageBox.Show("dynamically generated method!");
             return null;
         }
     }
