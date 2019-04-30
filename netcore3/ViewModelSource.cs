@@ -21,8 +21,8 @@ namespace Generator {
         static Dictionary<Type, Type> Types { get { return types ?? (types = new Dictionary<Type, Type>()); } }
 
         public static T Create<T>(Expression<Func<T>> constructorExpression) where T : class {
-            var actualAxpression = GetCtorExpression(constructorExpression, typeof(T), false);
-            return Expression.Lambda<Func<T>>(actualAxpression).Compile()();
+            var actualExpression = GetCtorExpression(constructorExpression, typeof(T), false);
+            return Expression.Lambda<Func<T>>(actualExpression).Compile()();
         }
 
         #region helpers
@@ -31,10 +31,6 @@ namespace Generator {
             NewExpression newExpression = constructorExpression.Body as NewExpression;
             if(newExpression != null) {
                 return GetNewExpression(type, newExpression);
-            }
-            MemberInitExpression memberInitExpression = constructorExpression.Body as MemberInitExpression;
-            if(memberInitExpression != null) {
-                return Expression.MemberInit(GetNewExpression(type, memberInitExpression.NewExpression), memberInitExpression.Bindings);
             }
             throw new ArgumentException("constructorExpression");
         }
