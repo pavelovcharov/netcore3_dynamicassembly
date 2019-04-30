@@ -6,3 +6,10 @@
 /obj
 /bin.NetCore
 /.vs/WindowedDocumentUIService.NetCore.Desktop/v16
+/.vs/WindowedDocumentUIService.NetCore.Desktop/DesignTimeBuild
+/netcore3/obj.NetCore.Desktop
+/netcore3/obj
+/netcore3/bin.NetCore
+/netcore3/.vs/WindowedDocumentUIService.NetCore.Desktop
+/wpf/obj/Debug
+/wpf/bin/Debug

@@ -224,7 +224,7 @@ namespace Generator {
     }
     public class ServiceContainer : IServiceContainer {
         public ServiceContainer(object owner) { }
-        T IServiceContainer.GetService<T>(string key, ServiceSearchMode searchMode = ServiceSearchMode.PreferLocal) {
+        T IServiceContainer.GetService<T>(string key, ServiceSearchMode searchMode) {
             System.Windows.MessageBox.Show("!");
             return null;
         }

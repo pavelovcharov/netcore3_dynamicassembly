@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.28803.202
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WindowedDocumentUIService.NetCore.Desktop", "WindowedDocumentUIService.NetCore.Desktop.csproj", "{96AC60E0-9B0E-4014-9874-8A4C3DD5E575}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WindowedDocumentUIService.NetCore.Desktop", "netcore3\WindowedDocumentUIService.NetCore.Desktop.csproj", "{96AC60E0-9B0E-4014-9874-8A4C3DD5E575}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowedDocumentUIService.Wpf", "wpf\WindowedDocumentUIService.Wpf.csproj", "{263F9ECC-7E06-49ED-886F-4CDD87E26BB9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{96AC60E0-9B0E-4014-9874-8A4C3DD5E575}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{96AC60E0-9B0E-4014-9874-8A4C3DD5E575}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{96AC60E0-9B0E-4014-9874-8A4C3DD5E575}.Release|Any CPU.Build.0 = Release|Any CPU
+		{263F9ECC-7E06-49ED-886F-4CDD87E26BB9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{263F9ECC-7E06-49ED-886F-4CDD87E26BB9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{263F9ECC-7E06-49ED-886F-4CDD87E26BB9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{263F9ECC-7E06-49ED-886F-4CDD87E26BB9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
