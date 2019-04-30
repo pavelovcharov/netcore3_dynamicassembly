@@ -125,10 +125,10 @@ namespace Generator {
 
             ILGenerator gen = method.GetILGenerator();
             Expression<Func<ISupportServices, IServiceContainer>> serviceContainerPropertyExpression = x => x.ServiceContainer;
-            Type[] getServiceMethodParams = new Type[] { typeof(string), typeof(ServiceSearchMode) };
+            Type[] getServiceMethodParams = new Type[] { typeof(string), typeof(object) };
             MethodInfo getServiceMethod =
                 typeof(IServiceContainer).GetMethod("GetService", BindingFlags.Instance | BindingFlags.Public, null,
-                    new Type[] { typeof(string), typeof(ServiceSearchMode) }, null);
+                    new Type[] { typeof(string), typeof(object) }, null);
             getServiceMethod = getServiceMethod.MakeGenericMethod(property.PropertyType);
 
             gen.Emit(OpCodes.Ldarg_0);
@@ -220,14 +220,13 @@ namespace Generator {
         IServiceContainer ServiceContainer { get; }
     }
     public interface IServiceContainer {
-        T GetService<T>(string key, ServiceSearchMode searchMode = ServiceSearchMode.PreferLocal) where T : class;
+        T GetService<T>(string key, object arg) where T : class;
     }
     public class ServiceContainer : IServiceContainer {
         public ServiceContainer(object owner) { }
-        T IServiceContainer.GetService<T>(string key, ServiceSearchMode searchMode) {
+        T IServiceContainer.GetService<T>(string key, object arg) {
             System.Windows.MessageBox.Show("!");
             return null;
         }
     }
-    public enum ServiceSearchMode { PreferLocal, LocalOnly, PreferParents }
 }
